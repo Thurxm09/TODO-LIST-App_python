@@ -2,9 +2,12 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ main ]
+    # déclenche sur main OU principal (sécurise)
+    branches: [ 'main', 'principal' ]
   pull_request:
-    branches: [ main ]
+    branches: [ 'main', 'principal' ]
+  # Permet d'exécuter manuellement depuis l'UI
+  workflow_dispatch:
 
 jobs:
   build:
