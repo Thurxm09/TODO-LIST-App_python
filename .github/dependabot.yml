@@ -5,3 +5,11 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+on:
+  push:
+    # déclenche sur main OU principal (sécurise)
+    branches: [ 'main', 'principal' ]
+  pull_request:
+    branches: [ 'main', 'principal' ]
+  # Permet d'exécuter manuellement depuis l'UI
+  workflow_dispatch:
