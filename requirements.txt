@@ -1,0 +1,9 @@
+# Runtime dependencies (empty if app is pure stdlib)
+# Example: tkinter is part of stdlib for Windows; add GUI libs only if used
+
+# Dev dependencies (for CI and local checks)
+pytest>=7.0
+black>=24.0
+isort>=5.12
+flake8>=6.0
+safety>=2.0

@@ -1,25 +1,47 @@
 # Guide de contribution
 
-Merci de contribuer au projet TODO List 🎉
+Merci pour votre intérêt à contribuer au projet TODO List.
 
-## Règles de branches
-- `main` : stable, production
-- `dev` : intégration
-- feature branches : `feature/nom-fonctionnalite`
-- bugfix branches : `fix/description-bug`
+Ce document décrit les règles et outils pour contribuer proprement (tests, style, PRs).
 
-## Commits
-Utiliser [Conventional Commits](https://www.conventionalcommits.org/) :
-- `feat: nouvelle fonctionnalité`
-- `fix: correction de bug`
-- `docs: maj documentation`
-- `chore: tâches diverses`
+Branches
 
-## Tests & lint
-- Lancer `npm run lint` avant de pousser
-- Lancer `npm test` pour vérifier la couverture
+- `main` : branche de production (protected)
+- `dev` : intégration et tests
+- features : `feature/<sujet>`
+- bugs : `fix/<sujet>`
 
-## Pull Requests
-- Remplir le template fourni
-- Attendre au moins 1 review
-- Respecter les règles de sécurité
+Commits
+
+- Utilisez Conventional Commits : `feat:`, `fix:`, `docs:`, `chore:` etc.
+- Écrivez un message clair et descriptif.
+
+Pré-requis locaux
+
+- Python 3.10+ (recommandé)
+- Créez un venv : `python -m venv .venv`
+- Activez : Windows `.\.venv\\Scripts\\activate` | Unix `source .venv/bin/activate`
+- Installez les dépendances : `pip install -r requirements.txt`
+
+Style et qualité
+
+- Formatage : `black .`
+- Imports : `isort .`
+- Lint : `flake8 .`
+
+Tests
+
+- Lancer : `pytest -q`
+- Couverture attendue : tests pour la logique métier dans `app/` et stockage dans `data/`.
+
+Pull Requests
+
+- Ouvrez une PR depuis une branche feature vers `dev` ou `main` selon contexte.
+- Remplissez le template de PR.
+- Inclure tests et mises à jour de documentation si nécessaire.
+
+Sécurité
+
+- Ne pas committer de secrets. Utilisez GitHub Secrets pour CI.
+
+Merci !

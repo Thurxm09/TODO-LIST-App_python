@@ -5,6 +5,7 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+<<<<<<< HEAD
 
 on:
   push:
@@ -14,3 +15,15 @@ on:
     branches: [ 'main', 'principal' ]
   # Permet d'exécuter manuellement depuis l'UI
   workflow_dispatch:
+=======
+    allow:
+      - dependency-type: "direct"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps):"
+>>>>>>> 6eb8a4e (chore(ci): harmonisation des workflows Python, sécurité et templates)
