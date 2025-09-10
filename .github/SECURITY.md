@@ -1,13 +1,32 @@
 # Politique de sécurité
 
-## Signalement de vulnérabilités
-Merci de ne **pas ouvrir d’issue publique** pour signaler une faille.
-Contactez directement : **tonemail@exemple.com**
+## Signalement
 
-## Délais de réponse
-- Première réponse : sous 48h
-- Correction : sous 2 semaines max (selon la gravité)
+Merci de ne pas ouvrir d'issue publique pour signaler une vulnérabilité.
+Contactez : security@example.com (remplacez par l'adresse officielle du projet).
+
+### Délai attendu
+
+- Accusé de réception sous 48 heures
+- Évaluation initiale sous 7 jours
+
+### Processus
+
+1. Réception et validation du rapport
+2. Triage et classement (Faible / Moyen / Élevé / Critique)
+3. Planification du correctif et notification publique si nécessaire
 
 ## Portée
-- Application TODO List (frontend & backend)
-- Configuration CI/CD
+
+- Code source
+- Infrastructure CI/CD
+- Fichiers de configuration et secrets
+
+## Informations à fournir
+
+- Description complète du problème
+- Étapes pour reproduire
+- Environnement (OS, version Python)
+- Logs et PoC (si possible)
+
+Merci de respecter la confidentialité jusqu'à la publication d'un correctif.

@@ -1,19 +1,19 @@
-name: CI Pipeline (Python)
+name: CI — Lint & Tests (Python)
 
 on:
   push:
-    branches: [ 'main', 'principal' ]
+    branches: ["main", "principal"]
   pull_request:
-    branches: [ 'main', 'principal' ]
+    branches: ["main", "principal"]
   workflow_dispatch:
 
 jobs:
-  build:
-    name: build
+  lint-and-test:
+    name: Lint and Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.10, 3.11]
+        python-version: [3.11, 3.10]
 
     steps:
       - name: Checkout repository
@@ -24,20 +24,34 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-
+
       - name: Install dependencies
         run: |
-          python -m venv .venv
-          source .venv/bin/activate
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Lint (optional)
+      - name: Format check (black)
         run: |
-          source .venv/bin/activate
-          # Run linter if present (ruff/flake8)
-          if command -v ruff >/dev/null 2>&1; then ruff check . || true; fi
+          python -m black --version || true
+          python -m black --check .
+        continue-on-error: false
 
-      - name: Run tests
+      - name: Import sort check (isort)
         run: |
-          source .venv/bin/activate
-          pytest -q
+          python -m isort --version || true
+          python -m isort --check-only .
+
+      - name: Lint (flake8)
+        run: |
+          python -m flake8 || true
+
+      - name: Run tests (pytest)
+        run: |
+          python -m pytest -q

@@ -1,12 +1,15 @@
 ## Description
-Décrire clairement les changements apportés.
+
+Décrivez succinctement les changements et le but de la PR.
 
 ## Checklist
-- [ ] Le code compile et passe les tests
-- [ ] Le style suit les règles de lint
-- [ ] Les tests sont ajoutés/mis à jour si nécessaire
-- [ ] La documentation est mise à jour
-- [ ] Revue de sécurité effectuée
+
+- [ ] Le code compile et les tests passent
+- [ ] Formatage : black/isort passé
+- [ ] Lint : flake8 passé
+- [ ] Tests ajoutés/mis à jour si nécessaire
+- [ ] Documentation mise à jour si nécessaire
 
 ## Liens
-Closes # (ID du ticket si applicable)
+
+Closes: # (issue)

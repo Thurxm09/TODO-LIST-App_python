@@ -5,12 +5,17 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    allow:
+      - dependency-type: "direct"
 
-on:
-  push:
-    # déclenche sur main OU principal (sécurise)
-    branches: [ 'main', 'principal' ]
-  pull_request:
-    branches: [ 'main', 'principal' ]
-  # Permet d'exécuter manuellement depuis l'UI
-  workflow_dispatch:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps):"
+  # Notes:
+  # dependabot.yml ne contient pas d'actions/événements GitHub — cet emplacement
+  # est lu automatiquement par Dependabot. Les sections ci-dessus configurent
+  # la surveillance pour pip et pour les actions GitHub.
