@@ -5,17 +5,6 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
-<<<<<<< HEAD
-
-on:
-  push:
-    # déclenche sur main OU principal (sécurise)
-    branches: [ 'main', 'principal' ]
-  pull_request:
-    branches: [ 'main', 'principal' ]
-  # Permet d'exécuter manuellement depuis l'UI
-  workflow_dispatch:
-=======
     allow:
       - dependency-type: "direct"
 
@@ -26,4 +15,7 @@ on:
     open-pull-requests-limit: 5
     commit-message:
       prefix: "chore(deps):"
->>>>>>> 6eb8a4e (chore(ci): harmonisation des workflows Python, sécurité et templates)
+  # Notes:
+  # dependabot.yml ne contient pas d'actions/événements GitHub — cet emplacement
+  # est lu automatiquement par Dependabot. Les sections ci-dessus configurent
+  # la surveillance pour pip et pour les actions GitHub.
