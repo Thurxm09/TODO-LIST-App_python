@@ -12,7 +12,7 @@ pytest = "^7.0"
 black = "^24.0"
 isort = "^5.12"
 flake8 = "^6.0"
-safety = "^2.0"
+safety = "^3.6"
 
 [tool.isort]
 profile = "black"
