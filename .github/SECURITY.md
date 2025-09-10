@@ -3,7 +3,7 @@
 ## Signalement
 
 Merci de ne pas ouvrir d'issue publique pour signaler une vulnérabilité.
-Contactez : security@example.com (remplacez par l'adresse officielle du projet).
+Contactez : othuram23@gmail.com.
 
 ### Délai attendu
 
