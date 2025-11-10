@@ -8,7 +8,7 @@ authors = ["Thurxm09 <othuram23@gmail.com>"]
 python = ">=3.10,<4.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "^8.4"
+pytest = "^9.0"
 black = "^25.1"
 isort = "^6.0"
 flake8 = "^7.3"
